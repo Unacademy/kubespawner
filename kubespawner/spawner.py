@@ -1638,7 +1638,7 @@ class KubeSpawner(Spawner):
             extra_resource_guarantees=self.extra_resource_guarantees,
             lifecycle_hooks=self.lifecycle_hooks,
             init_containers=self._expand_all(self.init_containers),
-            service_account=self.service_account,
+            service_account=self._expand_user_properties(self.service_account),
             extra_container_config=self.extra_container_config,
             extra_pod_config=self._expand_all(self.extra_pod_config),
             extra_containers=self._expand_all(self.extra_containers),
